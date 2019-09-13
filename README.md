@@ -1,4 +1,4 @@
-# WHAP! Branding Agency Bootcamp Project
+# WHAP! Branding Agency Bootcamp Project ![logo goes here](logoURL)
 
 One Paragraph of project description goes here
 
@@ -32,25 +32,6 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
@@ -74,9 +55,11 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Acknowledgments
 
 * Joe and Trevor for their amazing teaching
+* Innovation works for letting us take photos
+* [PurpleBooth for this ReadMe Structure](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
 
 ### Inspiration
 
-* [https://echidna.ca/](https://echidna.ca/)
-* [https://thearcane.com](https://thearcane.com)
-* [https://red-rhino.com/](https://red-rhino.com/)
+* [Digital Echidna](https://echidna.ca/)
+* [Arcane](https://thearcane.com)
+* [Red Rhino](https://red-rhino.com/)
