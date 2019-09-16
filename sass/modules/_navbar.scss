@@ -1,0 +1,37 @@
+header {
+  background: $bg-color;
+  display: flex;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+
+  div {
+    padding: 5px;
+  }
+  
+  nav {
+    margin-left: auto;
+      
+    ul {
+      right: 0;
+      margin: 0;
+      border: 0;
+      padding: 0;
+      
+      li { 
+        display: inline; 
+        padding: 10px;
+        }
+    }
+        
+    a {
+      text-decoration: none; 
+      font-family: $p-font;
+      font-size: 18px;
+    }
+      
+  }
+
+
+}
+
