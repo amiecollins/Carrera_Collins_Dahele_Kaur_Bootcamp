@@ -1,6 +1,16 @@
 # WHAP! Branding Agency Bootcamp Project ![logo goes here](https://i.ibb.co/0sGtjqS/logob-w.png)
 
-One Paragraph of project description goes here
+We are a collective of out-of-the-box thinkers ready to tackle your marketing projects; big or small, we WHAP! it all!
+
+We offer 
+*	Web Design
+*	Product design
+* Brand Building
+* Search engine optimization
+*	Advertising design
+*	App Development
+
+We value accessibility, intuitive experiences and mobile first design.
 
 ## Getting Started
 
