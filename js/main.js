@@ -30,9 +30,23 @@ function slideshow () {
 (() => {
 
 	console.log("javascript enabled");
-	
-	const lightBox = document.querySelectorAll(".light-box");
+
+	const photos = document.querySelectorAll(".photo")
+	const lightBox = document.querySelector(".light-box");
+	const name = document.querySelector(".name");
+	const position = document.querySelector(".position");
+	const lightboxPhoto = document.querySelector(".light-box-photo")
+	const description = document.querySelector(".light-box-description")
 	const exitButtons = document.querySelectorAll(".exit-button");
+
+	const lightBoxData = [
+		[`Walter Carrera`, `Front-End Developer`, `photoURL`, `Bio`],
+		[`Harwinder Dahele`, `Motion Designer`, `photoURL`, `Bio`],
+		[`Amie Collins`, `Project Manager`, `photoURL`, `Bio`],
+		[`Prabhjot Kaur`, `Motion Designer`, `photoURL`, `Bio`],
+		[`Prabhjot Kaur`, `Graphic Designer`, `photoURL`, `Bio`],
+		[`Text-A-Taxi`, `Local Taxi Catalogue and Review`, `photoURL`, `Text-A-Taxi started as a passion project for our client and gained users quickly, the app was originally servicing only large cities in Ontario but with the help of us they have been able to provide taxi information for all of Canada. We revamped their logo as well as their app, adding new features such as auto-calling and auto-texting within the app and a favorite taxi option to save your favorite local taxis.`]
+	];
 	
     const play = document.querySelector(".play-button");
 	const pause = document.querySelector(".pause-button");
@@ -45,8 +59,11 @@ function slideshow () {
 
 
 	function showLightBox() {
-		var targetLightBox = lightBox[this.dataset.offset];
-		targetLightBox.classList.add('show-box');
+		lightBox.classList.add('show-box');
+		name.textContent = lightBoxData[this.dataset.offset][0];
+		position.textContent = lightBoxData[this.dataset.offset][1];
+		lightboxPhoto.src = lightBoxData[this.dataset.offset][2];
+		description.textContent = lightBoxData[this.dataset.offset][3];
 	}
 
 	function hideLightBox() {
@@ -88,8 +105,9 @@ function slideshow () {
 		if (videoPlayer.volume() > 0) {
 			videoPlayer.volume(videoPlayer.volume() - 0.1);
 		}
-    }
-    lightBox.forEach(lightbox => lightbox.addEventListener("click", showLightBox));
+	}
+	
+    photos.forEach(photo => photo.addEventListener("click", showLightBox));
 	exitButtons.forEach(exitButton => exitButton.addEventListener("click", hideLightBox));
 
 	play.addEventListener("click", playPressed);
