@@ -1,4 +1,4 @@
-# WHAP! Branding Agency Bootcamp Project ![logo goes here](https://ibb.co/vXjYx1G)
+# WHAP! Branding Agency Bootcamp Project ![logo goes here](https://i.ibb.co/0sGtjqS/logob-w.png)
 
 One Paragraph of project description goes here
 
