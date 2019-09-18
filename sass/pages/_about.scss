@@ -1,0 +1,41 @@
+@media (max-width: 600px) {
+    .about {
+        flex-wrap: wrap;
+
+        .team {
+
+            .member {
+                display: flex;
+                flex-wrap: wrap;
+
+                img {
+                    flex-grow: 1;
+                    flex-shrink: 1;
+
+                    width: 25%;
+
+                    margin: 10px;
+
+                    padding-left: 5px;
+                }
+            }
+        }
+
+        .page-title {
+            margin-top: 60px;
+            padding: 20px;
+            padding-bottom: 0;
+            font-family: $p-font;
+            color: $red-bg;
+        }
+
+        .divider {
+            height: 20px;
+            width: 100%;
+            background-color: $orange-bg;
+            margin-top: -10px;
+            margin-bottom: -20px;
+        }
+
+    }
+}
