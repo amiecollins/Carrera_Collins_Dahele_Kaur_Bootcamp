@@ -6,7 +6,7 @@
     <title>WHAP</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/f8b14333ef.js"></script>
 </head>
 <body>
     <!--Hidden for accessibility-->
@@ -16,18 +16,63 @@
         <h1 class="hidden">Navigation</h1>
         <!--Logo-->
         <div class="brand">
-            <a itemprop="url" href="index.html" title="WHAP Inc"><img itemprop="logo" src="#" alt="WHAP Inc, London, ON"/></a>
+            <a href="index.html" title="WHAP Inc">
+                <object class="logo" type="image/svg+xml" data="images/whap_logo.svg">SVG is not supported</object>
+            </a>
         </div>
         <!--Navbar-->
         <nav class="nav">
+            <h1 class="hidden">Links</h1>
             <ul class="nav-items">
-                <li class="home"><a href="index.html">Home</a></li>
-                <li class="about"><a href="#about">About</a></li>
-                <li class="projects"><a href="#projects">Projects</a></li>
-                <li class="contact"><a href="#contact">Contact</a></li>
+                <li class="home-link"><a href="index.html">Home</a></li>
+                <li class="about-link"><a href="#about">About</a></li>
+                <li class="projects-link"><a href="#projects">Projects</a></li>
+                <li class="contact-link"><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <div class="menu">
+            <i id="nav-toggler" onclick="toggle()" class="fas fa-bars"></i>
+        </div>
     </header>
+    <!--Sidebar-->
+    <nav id="sidebar">
+        <h1 class="hidden">Sidebar</h1>
+        <ul class="sidebar-items">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+        <hr>
+        <ul class="social-icons">
+            <li>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </li>
+        </ul>
+        <hr>
+    </nav>
+    <!--Home Section-->
+    <section class="home one" id="bg-change">
+        <h1 class="hidden">Home</h1>
+        <div class="hero-text">
+            <h1 class="tagline">Friendly<br>Unique<br>Authentic</h1>
+        </div>
+    </section>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
