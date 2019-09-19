@@ -1,8 +1,8 @@
 .light-box {
     display: none;
-    background-color: black;	
+    background-color: white;	
     position: fixed;
-	color: white;
+	color: #B8241C;
 	left: 0px;
     top: 0px;
     width: 80%;
@@ -27,4 +27,12 @@ video {
     position: fixed;
     right: 15%;
     top: 15%;
+}
+
+.light-box-image {
+    border: 2px solid black;
+}
+
+.light-box-description {
+    width: 70%;
 }
