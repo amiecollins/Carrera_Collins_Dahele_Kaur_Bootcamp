@@ -77,13 +77,20 @@
         <div class="team">
             <div class="member">
                 <div class="box"><h1 class="page-title">Our Team</h1></div>
-                <div class="light-box" data-offset="0"></div>
-                <img class="photo first" data-offset="1" src="images/har.jpg"/>
-                <img class="photo second" data-offset="2" src="images/har.jpg"/>
+                <div class="light-box"><img alt="exit" src="images/exitButton.svg" class="exit-button">
+                    <div class="image-wrapper"><img class="light-box-image" alt="image" src=""></div>
+                    <div class="data-wrapper">
+                        <h1 class="light-box-title"></h1>
+                        <h2 class="light-box-subtitle"></h2>
+                        <p class="light-box-description"></p>
+                    </div>
+                </div>
+                <img class="photo first" data-lightbox="Walter" src="images/har.jpg"/>
+                <img class="photo second" data-lightbox="Harwinder" src="images/har.jpg"/>
                 <div class="box2"></div>
-                <img class="photo third" data-offset="3" src="images/har.jpg"/>
-                <img class="photo fourth" data-offset="4" src="images/har.jpg"/>
-                <img class="photo fifth" src="images/har.jpg"/>
+                <img class="photo third" data-lightbox="Amie" src="images/har.jpg"/>
+                <img class="photo fourth" data-lightbox="Prabh" src="images/har.jpg"/>
+                <img class="photo fifth" data-lightbox="Gill" src="images/har.jpg"/>
             </div>
         </div>
     </section>
@@ -95,6 +102,6 @@
         <h2>- Mobile First Design</h2>
     </section>
 
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
