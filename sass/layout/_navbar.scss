@@ -1,5 +1,5 @@
 header {
-  background: $red-bg;
+  background: whitesmoke;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -39,11 +39,11 @@ header {
       text-decoration: none; 
       font-family: $p-font;
       font-size: 18px;
-      color: whitesmoke;
+      color: black;
       padding: 10px;
 
       &:hover {
-        color: black;
+        color: gray;
       }
     }
       
@@ -56,7 +56,7 @@ header {
   display: none;
 
   #nav-toggler {
-    color: white;
+    color: #B8241C;
     margin-right: 10px;
     padding: 5px;
   }

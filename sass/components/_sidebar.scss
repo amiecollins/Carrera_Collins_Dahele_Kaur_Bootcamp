@@ -3,7 +3,7 @@
     top: calc( 50px + (60 - 50) * ((100vw - #{$min-width}px) / (#{$max-width} - #{$min-width})));
     right: 0;
     width: 250px;
-    background-color: $bg-color;
+    background-color: whitesmoke;
     transition: all 0.3s;
     min-height: 100vh;
     z-index: 20;
