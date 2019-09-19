@@ -42,7 +42,7 @@ function slideshow () {
 	const lightBoxData = [
 		[`Walter Carrera`, `Front-End Developer`, `photoURL`, `Bio`],
 		[`Harwinder Dahele`, `Motion Designer`, `photoURL`, `Bio`],
-		[`Amie Collins`, `Project Manager`, `photoURL`, `Bio`],
+		[`Amie Collins`, `Project Manager`, `photoURL`, `Amie is a down-to-earth, easy-going person with a passion for creating. Believing everyone on a project should have a say when it comes to design and development, she works to combine the voices of client and team members into cohesive experiences that are relatable and comfortable to the target audience. With experience in front-end, graphic and motion design her determination to work with everybody peacefully is what brings happy clients and a happy team.`],
 		[`Prabhjot Kaur`, `Motion Designer`, `photoURL`, `Bio`],
 		[`Prabhjot Kaur`, `Graphic Designer`, `photoURL`, `Bio`],
 		[`Text-A-Taxi`, `Local Taxi Catalogue and Review`, `photoURL`, `Text-A-Taxi started as a passion project for our client and gained users quickly, the app was originally servicing only large cities in Ontario but with the help of us they have been able to provide taxi information for all of Canada. We revamped their logo as well as their app, adding new features such as auto-calling and auto-texting within the app and a favorite taxi option to save your favorite local taxis.`]
