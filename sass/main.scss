@@ -1,0 +1,75 @@
+// Importing variables
+@import "_vars";
+@import "layout/navbar";
+@import "layout/form";
+@import "components/lightbox";
+@import "components/sidebar";
+@import "pages/home";
+@import "pages/about";
+
+// Importing fonts
+@font-face {
+  font-family: 'Engcomica'; 
+  src: url(../includes/fonts/engcomica/Engcomica.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Jost';
+  src: url(../includes/fonts/Jost/OpenType/Jost-400-Book.otf) format('opentype');
+}
+
+//Hiding Accessibility Titles
+.hidden {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {font-family: $h-font;}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 19px;
+}
+
+p {
+  font-size: 14px;
+  font-family: $p-font;
+}
+
+section { 
+    min-height: 100vh; 
+    display: flex;
+}
+
+//Media Queries
+@media screen and (min-width: #{$min-width}px) {
+
+  //Calculating the font size according to the width of the viewport. 
+  //Math formula courtesy of Geoff Graham. https://css-tricks.com/snippets/css/fluid-typography/
+  h1 {
+    font-size: calc( 32px + (46 - 32) * ((100vw - #{$min-width}px) / (#{$max-width} - #{$min-width})));
+  }
+  h2 {
+    font-size: calc( 24px + (38 - 24) * ((100vw - #{$min-width}px) / (#{$max-width} - #{$min-width})));
+  }
+  h3 {
+    font-size: calc( 19px + (33 - 19) * ((100vw - #{$min-width}px) / (#{$max-width} - #{$min-width})));
+  }
+  p {
+    font-size: calc( 14px + (20 - 14) * ((100vw - #{$min-width}px) / (#{$max-width} - #{$min-width})));
+  }
+
+}

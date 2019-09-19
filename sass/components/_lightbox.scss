@@ -1,0 +1,30 @@
+.light-box {
+    display: none;
+    background-color: black;	
+    position: fixed;
+	color: white;
+	left: 0px;
+    top: 0px;
+    width: 80%;
+    height: 80%;
+    z-index: 1;
+    padding: 20%;
+}
+
+.show-box {
+    display: block;
+}
+
+video {
+	width: 80%;
+	margin-top: 5%;
+	border: thin solid #949393;
+}
+
+.exit-button {
+    width: 5%;
+    height: 5%;
+    position: fixed;
+    right: 15%;
+    top: 15%;
+}

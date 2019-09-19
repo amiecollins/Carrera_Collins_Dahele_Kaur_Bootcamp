@@ -1,0 +1,50 @@
+#sidebar {
+    position: fixed;
+    top: calc( 50px + (60 - 50) * ((100vw - #{$min-width}px) / (#{$max-width} - #{$min-width})));
+    right: 0;
+    width: 250px;
+    background-color: whitesmoke;
+    transition: all 0.3s;
+    min-height: 100vh;
+    z-index: 20;
+    margin-right: -250px;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        border: 0;
+
+        li {
+            list-style: none;
+            padding: 15px 20px;
+            margin: 5px 0;
+
+            a {
+                text-decoration: none;
+                color: black;
+                font-family: $p-font;
+                font-size: 18px;
+                padding: 5px 10px;
+
+                &:hover {
+                    color: gray;
+                }
+            }
+        }
+    }
+
+    .social-icons {
+
+        li {
+            display: inline-block;
+            justify-content: space-evenly;
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    #sidebar.active {
+        margin-right: 0px;
+    }
+}

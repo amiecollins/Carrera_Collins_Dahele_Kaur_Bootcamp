@@ -1,0 +1,164 @@
+.about {
+
+    background-color: $red-bg;
+
+    .team {
+
+        padding: 55px 0;
+        display: flex;
+
+        .member {
+
+            display: flex;
+            flex-wrap: wrap;
+            align-self: center;
+
+
+            img {
+                flex-grow: 1;
+                flex-shrink: 1;
+
+                max-width: 25%;
+            }
+        }
+    }
+
+    .first {
+        order: 1;
+    }
+
+    .second {
+        order: 2;
+    }
+
+    .third {
+        order: 5;
+    }
+
+    .fourth {
+        order: 6;
+    }
+
+    .fifth {
+        order: 7;
+    }
+
+    .box {
+        flex-grow: 1;
+        flex-shrink: 1;
+
+        order: 3;
+
+        background-color: whitesmoke;
+
+        max-width: 50%;
+        width: 50%;
+
+        display: flex;
+
+        align-items: center;
+
+        h1 {
+            font-family: $p-font;
+            color: $red-bg;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .box2 {
+        flex-grow: 1;
+        flex-shrink: 1;
+
+        order: 4;
+
+        background-color: whitesmoke;
+
+        
+        width: 25%;
+    }
+}
+
+.mission {
+    background-color: $red-bg;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-size: calc( 40px + (60 - 40) * ((100vw - #{$min-width}px) / (#{$max-width} - #{$min-width})));
+    }
+
+    h1, h2 {
+        font-family: $p-font;
+        color: white;
+        width: 100%;
+        text-align: center;
+
+        span {
+            position: relative;
+            top: -2px;
+        }
+    }
+
+    p {
+        color: white;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .about {
+        .team {
+
+            .member {
+
+                img {
+                    max-width: calc(100% / 3);
+                }
+            }
+        }
+
+        .box {
+            width: calc(100% / 3);
+
+            h1 {
+
+            }
+        }
+
+        .box2 {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about {
+
+
+        .team {
+
+            .member {
+                align-self: center;
+
+                img {
+                    max-width: 50%;
+                }
+            }
+        }
+
+        .box {
+            width: 50%;
+
+            h1 {
+
+            }
+        }
+
+        .box2 {
+            display: none;
+        }
+    }
+}
