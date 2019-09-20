@@ -1,3 +1,5 @@
+import lightBoxData from "./modules/lightboxData.js";
+
 //Sidebar functionality
 function toggle() {
     document.getElementById("nav-toggler").classList.toggle("fa-times");
@@ -26,43 +28,67 @@ function slideshow () {
     setTimeout(slideshow, 10000);
 }
 
-//Lightbox functionality
+// Lightbox & video functionality
 (() => {
 
 	console.log("javascript enabled");
 
 	const photos = document.querySelectorAll(".photo")
 	const lightBox = document.querySelector(".light-box");
-	const name = document.querySelector(".name");
-	const position = document.querySelector(".position");
-	const lightboxPhoto = document.querySelector(".light-box-photo")
+	const name = document.querySelector(".light-box-title");
+	const position = document.querySelector(".light-box-subtitle");
+	const lightboxPhoto = document.querySelector(".light-box-image")
 	const description = document.querySelector(".light-box-description")
-	const exitButtons = docume1nt.querySelectorAll(".exit-button");
 
+	const exitButton = document.querySelector(".exit-button");
 
-    const play = document.querySelector(".play-button");
-	const pause = document.querySelector(".pause-button");
-	const stop = document.querySelector(".stop-button");
-	const rewind = document.querySelector(".rewind-button");
-	const fastForward = document.querySelector(".fast-forward-button");
-	const volumeUp = document.querySelector(".volume-up-button");
-    const volumeDown = document.querySelector(".volume-down-button");
-	const videoPlayer = document.querySelector(".video-player");
-
+	const videoLocation = document.querySelector(".image-wrapper");
+	const play = document.createElement("button");
+	play.classList.add("play-button");
+	const pause = document.createElement("button");
+	pause.classList.add("pause-button");
+	const stop = document.createElement("button");
+	stop.classList.add("stop-button");
+	const rewind = document.createElement("button");
+	rewind.classList.add("rewind-button");
+	const fastForward = document.createElement("button");
+	fastForward.classList.add("fastForward-button");
+	const volumeUp = document.createElement("button");
+	volumeUp.classList.add("volume-up-button");
+    const volumeDown = document.createElement("button");
+	volumeDown.classList.add("volume-down-button");
+	const videoPlayer = document.createElement("video");
+	videoPlayer.classList.add("video-player");
+	const controls = document.createElement("div");
+	controls.classList.add("video-controls");
+	controls.appendChild(play);
+	controls.appendChild(pause);
+	controls.appendChild(stop);
+	controls.appendChild(rewind);
+	controls.appendChild(fastForward);
+	controls.appendChild(volumeUp);
+	controls.appendChild(volumeDown);
 
 	function showLightBox() {
-		lightBox.classList.add('show-box');
-		name.textContent = lightBoxData[this.dataset.offset][0];
-		position.textContent = lightBoxData[this.dataset.offset][1];
-		lightboxPhoto.src = lightBoxData[this.dataset.offset][2];
-		description.textContent = lightBoxData[this.dataset.offset][3];
+		let index = this.dataset.lightbox;
+		name.textContent = lightBoxData[index].name;
+		position.textContent = lightBoxData[index].role;
+		lightboxPhoto.src = lightBoxData[index].photourl;
+		lightboxPhoto.alt = lightBoxData[index].name;
+		description.textContent = lightBoxData[index].description;
+		if (index == "Video") {
+			videoPlayer.src = "../video/promo.mp4"
+			videoPlayer.autoplay = true;
+			videoLocation.appendChild(videoPlayer);
+			videoLocation.appendChild(controls);
+		}
+		lightBox.classList.add("show-box");
 	}
 
 	function hideLightBox() {
-		for (i = 0; i < lightBox.length; i++) {
-			lightBox[i].classList.remove('show-box');
-			stopPressed();
-		}
+		lightBox.classList.remove("show-box");
+		videoLocation.parentNode.removeChild(videoPlayer);
+		videoLocation.parentNode.removeChild(controls);
 	}
 	
 	function playPressed() {
@@ -100,13 +126,13 @@ function slideshow () {
 	}
 	
     photos.forEach(photo => photo.addEventListener("click", showLightBox));
-	exitButtons.forEach(exitButton => exitButton.addEventListener("click", hideLightBox));
+	exitButton.addEventListener("click", hideLightBox);
 
 	play.addEventListener("click", playPressed);
 	pause.addEventListener("click", pausePressed);
 	stop.addEventListener("click", stopPressed);
 	rewind.addEventListener("click", rewindPressed);
-	fastforward.addEventListener("click", fastForwardPressed);
+	fastForward.addEventListener("click", fastForwardPressed);
 	volumeUp.addEventListener("click", volumeUpPressed);
 	volumeDown.addEventListener("click", volumeDownPressed);
 	

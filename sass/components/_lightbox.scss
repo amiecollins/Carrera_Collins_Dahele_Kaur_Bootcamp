@@ -1,0 +1,47 @@
+
+.light-box {
+    display: none;
+    background-color: white;	
+    position: fixed;
+	color: #B8241C;
+	left: 0px;
+    top: 0px;
+    width: 80%;
+    height: 80%;
+    z-index: 1;
+    padding: 100px;
+}
+
+.show-box {
+    display: block;
+}
+
+video {
+	width: 80%;
+	margin-top: 5%;
+	border: thin solid #949393;
+}
+
+.exit-button {
+    width: 5%;
+    height: 5%;
+    position: fixed;
+    right: 15%;
+    top: 15%;
+}
+
+.light-box-image {
+    border: 2px solid black;
+}
+
+.light-box-description {
+    width: 70%;
+}
+
+@media screen and (min-width: 600px) {
+
+    .light-box {
+        width: 100%;
+    }
+
+}

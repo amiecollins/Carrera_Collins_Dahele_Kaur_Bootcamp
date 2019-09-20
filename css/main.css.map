@@ -4,4 +4,5 @@
 "sources": ["../sass/layout/_navbar.scss","../sass/_vars.scss","../sass/layout/_form.scss","../sass/components/_sidebar.scss","../sass/pages/_home.scss","../sass/pages/_about.scss","../sass/pages/_projects.scss","../sass/main.scss"],
 "names": [],
 "file": "main.css"
+
 }
