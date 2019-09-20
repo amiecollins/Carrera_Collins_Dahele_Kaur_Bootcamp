@@ -24,14 +24,14 @@ export default {
         name: "Prabhjot -Prabh- Kaur",
         role: "Graphic Designer",
         photourl: "../../images/prabh_2.jpg",
-        description: `Bio Goes Here`
+        description: `Prabhjot Kaur Bhatti is passionate about her job. She is working as a graphic and motion designer. Her style is unique. She understands her responsibility of everything in our power to convince the client. Dedication and determination is key of success towards her work.`
     },
 
     Gill: {
         name: "Prabhjot -Gill- Kaur",
         role: "Motion Designer",
         photourl: "../../images/prabh_gill_2.jpg",
-        description: `Bio Goes Here`
+        description: `Prabhjot Kaur Gill did her diploma in motion designing and she  is very dedicated person towards her work, she give her best to make her clients satisfy with their projects. Her work force the client to come again. She is also  experienced in front-end development and designing of web.`
     },
 
     Video: {

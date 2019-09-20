@@ -122,6 +122,14 @@
 
     width: 25%;
   }
+
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -156,6 +164,14 @@
 
     .box2 {
       display: none;
+    }
+
+    .mobile {
+      display: none;
+    }
+
+    .desktop {
+      display: block;
     }
   }
 }
