@@ -11,6 +11,7 @@
     display: flex;
     flex-wrap: wrap;
     align-self: center;
+    justify-content: space-around;
 
     img {
       -webkit-box-flex: 1;
@@ -123,6 +124,9 @@
     width: 25%;
   }
 
+  .main-project {
+    min-width: 100%;
+  }
 
 }
 
@@ -171,6 +175,9 @@
 
   }
 
+}
+
+@media screen and (min-width: 600px) {
   .mobile {
     display: none;
   }
