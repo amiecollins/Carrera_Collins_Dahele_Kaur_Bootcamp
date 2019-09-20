@@ -39,6 +39,7 @@ function slideshow () {
 	const position = document.querySelector(".light-box-subtitle");
 	const lightboxPhoto = document.querySelector(".light-box-image")
 	const description = document.querySelector(".light-box-description")
+	var index = "";
 
 	const exitButton = document.querySelector(".exit-button");
 
@@ -70,14 +71,15 @@ function slideshow () {
 	controls.appendChild(volumeDown);
 
 	function showLightBox() {
-		let index = this.dataset.lightbox;
+		index = this.dataset.lightbox;
 		name.textContent = lightBoxData[index].name;
 		position.textContent = lightBoxData[index].role;
 		lightboxPhoto.src = lightBoxData[index].photourl;
 		lightboxPhoto.alt = lightBoxData[index].name;
 		description.textContent = lightBoxData[index].description;
 		if (index == "Video") {
-			videoPlayer.src = "../video/promo.mp4"
+			lightboxPhoto.classList.add("hidden");
+			videoPlayer.src = lightBoxData[index].photourl;
 			videoPlayer.autoplay = true;
 			videoLocation.appendChild(videoPlayer);
 			videoLocation.appendChild(controls);
@@ -87,8 +89,12 @@ function slideshow () {
 
 	function hideLightBox() {
 		lightBox.classList.remove("show-box");
-		videoLocation.parentNode.removeChild(videoPlayer);
-		videoLocation.parentNode.removeChild(controls);
+		if (index == "Video") {
+			lightboxPhoto.classList.remove("hidden");
+			videoLocation.removeChild(videoPlayer);
+			videoLocation.removeChild(controls);
+		}
+		
 	}
 	
 	function playPressed() {
@@ -106,27 +112,28 @@ function slideshow () {
 	}
 
 	function rewindPressed() {
-		videoPlayer.currentTime = currentTime - 5;
+		videoPlayer.currentTime = videoPlayer.currentTime - 2;
 	}
 
 	function fastForwardPressed() {
-		videoPlayer.currentTime = currentTime + 5;
+		videoPlayer.currentTime = videoPlayer.currentTime + 2;
 	}
 
 	function volumeUpPressed() {
-		if (videoPlayer.volume() < 1) {
-			videoPlayer.volume(videoPlayer.volume() + 0.1);
+		if (videoPlayer.volume != 1) {
+			videoPlayer.volume = videoPlayer.volume + 0.1;
 		}
 	}
 	
 	function volumeDownPressed() {
-		if (videoPlayer.volume() > 0) {
-			videoPlayer.volume(videoPlayer.volume() - 0.1);
+		if (videoPlayer.volume != 0) {
+			videoPlayer.volume = videoPlayer.volume - 0.1;
 		}
 	}
 	
     photos.forEach(photo => photo.addEventListener("click", showLightBox));
 	exitButton.addEventListener("click", hideLightBox);
+	
 
 	play.addEventListener("click", playPressed);
 	pause.addEventListener("click", pausePressed);

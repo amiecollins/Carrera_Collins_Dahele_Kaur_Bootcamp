@@ -1,5 +1,9 @@
 .projects {
   background-color: $golden-rod;
+  display: flex;
+  align-content:center;
+  padding-bottom: 0px;
+  min-height: 50vh;
 
   .project-grid {
     padding: 55px 0;
@@ -11,6 +15,7 @@
     display: flex;
     flex-wrap: wrap;
     align-self: center;
+    align-items: stretch;
     justify-content: space-around;
 
     img {
@@ -125,7 +130,9 @@
   }
 
   .main-project {
-    min-width: 100%;
+    max-width: 100%;
+    flex-grow: 3;
+    flex-shrink: 3;
   }
 
 }
@@ -177,12 +184,18 @@
 
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 400px) {
   .mobile {
     display: none;
   }
 
   .desktop {
     display: block;
+  }
+
+  section {
+    .projects {
+      min-height: 50vh;
+    }
   }
 }

@@ -17,9 +17,61 @@
 }
 
 video {
-	width: 80%;
+    width: 50%;
+    margin-right: auto;
 	margin-top: 5%;
 	border: thin solid #949393;
+}
+
+.video-controls {
+    width: 45%;
+    margin-right: auto;
+    margin-top: 10px;
+    background-color: whitesmoke;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.video-controls button {
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    max-height: 30px;
+    background-repeat: no-repeat;
+}
+
+.play-button {
+    background-image:url("../../images/play.svg");
+}
+
+.pause-button {
+    background-image:url("../../images/pause.svg");
+}
+
+.stop-button {
+    background-image:url("../../images/stop.svg");
+}
+
+.rewind-button {
+    background-image:url("../../images/rewind.svg");
+}
+
+.fastForward-button {
+    background-image:url("../../images/fastforward.svg");
+}
+
+.volume-up-button {
+    background-image:url("../../images/volume_up.svg");
+}
+
+.volume-down-button {
+    background-image:url("../../images/volume_down.svg");
 }
 
 .exit-button {
@@ -43,5 +95,9 @@ video {
     .light-box {
         width: 100%;
         overflow: scroll;
+    }
+
+    .light-box-image {
+        max-width: 65%!important;
     }
 }

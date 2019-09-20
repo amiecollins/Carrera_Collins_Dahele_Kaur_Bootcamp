@@ -37,17 +37,23 @@ export default {
     Video: {
         name: "We Are WHAP!",
         role: "A Short Video About Us",
-        photourl: "",
+        photourl: "../../video/bootcamp_video.mp4",
         description: `This is a short video made by our motion designers describing what we offer as a company.`
     },
 
     TextATaxi: {
         name: "Text-a-Taxi",
         role: "Local Taxi Catalogue and Review",
-        photourl: "../../images/textataxiLightbox.jpg",
+        photourl: "../../images/TextaTaxi_Desktop_2.jpg",
         description: `Text-A-Taxi started as a passion project for our client and gained users quickly, the app was originally servicing only large cities in Ontario but with the help of us they have been able to provide taxi information for all of Canada. We revamped their logo as well as their app, adding new features such as auto-calling and auto-texting within the app and a favorite taxi option to save your favorite local taxis.`
-    }
+    },
 
+    JackNJill: {
+        name: "Jack N Jill Cleaning Service",
+        role: "Residential and Commercial cleaning service",
+        photourl: "../../images/JackNJill_Desktop_2.jpg",
+        description: `Jack N Jill’s previous website was difficult to navigate and had a poor user experience, which led them to lose a lot of clientele. We revamped their site to make it mobile-first and streamlined the design by dividing the site into three distinct sections, their residential services, their commercial services, and ways to contact and learn more about the company. By dividing their residential and commercial services users are better able to identify what cleaning service package they need and results in more people hiring the service.`
+    }
 
 
 }
