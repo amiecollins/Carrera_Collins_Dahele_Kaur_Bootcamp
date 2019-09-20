@@ -1,5 +1,9 @@
 header {
-  background: whitesmoke;
+  background: $white-smoke;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -37,8 +41,6 @@ header {
         
     a {
       text-decoration: none; 
-      font-family: $p-font;
-      font-size: 18px;
       color: black;
       padding: 10px;
 
@@ -46,9 +48,7 @@ header {
         color: gray;
       }
     }
-      
   }
-
 }
 
 .menu {
@@ -56,7 +56,7 @@ header {
   display: none;
 
   #nav-toggler {
-    color: #B8241C;
+    color: $fire-brick;
     margin-right: 10px;
     padding: 5px;
   }

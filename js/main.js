@@ -37,7 +37,7 @@ function slideshow () {
 	const position = document.querySelector(".position");
 	const lightboxPhoto = document.querySelector(".light-box-photo")
 	const description = document.querySelector(".light-box-description")
-	const exitButtons = document.querySelectorAll(".exit-button");
+	const exitButtons = docume1nt.querySelectorAll(".exit-button");
 
 
     const play = document.querySelector(".play-button");

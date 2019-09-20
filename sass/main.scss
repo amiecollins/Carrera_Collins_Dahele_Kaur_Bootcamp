@@ -1,21 +1,13 @@
 // Importing variables
 @import "_vars";
+
 @import "layout/navbar";
 @import "layout/form";
 @import "components/lightbox";
 @import "components/sidebar";
 @import "pages/home";
 @import "pages/about";
-
-// Importing fonts
-@font-face {
-  font-family: 'Engcomica'; 
-  src: url(../includes/fonts/engcomica/Engcomica.otf) format('opentype');
-}
-@font-face {
-  font-family: 'Jost';
-  src: url(../includes/fonts/Jost/OpenType/Jost-400-Book.otf) format('opentype');
-}
+@import "pages/projects";
 
 //Hiding Accessibility Titles
 .hidden {
@@ -30,27 +22,44 @@ body {
   padding: 0;
 }
 
-h1, h2, h3 {font-family: $h-font;}
+h1, h2, h3 {
+  font-family: $jost;
+
+}
 
 h1 {
   font-size: 32px;
+  font-weight: 600;
 }
 
 h2 {
   font-size: 24px;
+  font-weight: 400;
 }
 
 h3 {
   font-size: 19px;
+  font-weight: 400;
 }
 
 p {
   font-size: 14px;
-  font-family: $p-font;
+  font-family: $jost;
+  font-weight: 400;
+}
+
+a {
+  font-family: $jost;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 section { 
-    min-height: 100vh; 
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
 }
 
