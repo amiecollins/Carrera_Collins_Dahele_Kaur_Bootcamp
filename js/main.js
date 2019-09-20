@@ -1,3 +1,5 @@
+import lightBoxData from "./modules/lightboxData.js";
+
 //Sidebar functionality
 function toggle() {
     document.getElementById("nav-toggler").classList.toggle("fa-times");
@@ -26,51 +28,73 @@ function slideshow () {
     setTimeout(slideshow, 10000);
 }
 
-//Lightbox functionality
+// Lightbox & video functionality
 (() => {
 
 	console.log("javascript enabled");
 
 	const photos = document.querySelectorAll(".photo")
 	const lightBox = document.querySelector(".light-box");
-	const name = document.querySelector(".name");
-	const position = document.querySelector(".position");
-	const lightboxPhoto = document.querySelector(".light-box-photo")
+	const name = document.querySelector(".light-box-title");
+	const position = document.querySelector(".light-box-subtitle");
+	const lightboxPhoto = document.querySelector(".light-box-image")
 	const description = document.querySelector(".light-box-description")
-	const exitButtons = document.querySelectorAll(".exit-button");
+	var index = "";
 
-	const lightBoxData = [
-		[`Walter Carrera`, `Front-End Developer`, `photoURL`, `Bio`],
-		[`Harwinder Dahele`, `Motion Designer`, `photoURL`, `Bio`],
-		[`Amie Collins`, `Project Manager`, `photoURL`, `Amie is a down-to-earth, easy-going person with a passion for creating. Believing everyone on a project should have a say when it comes to design and development, she works to combine the voices of client and team members into cohesive experiences that are relatable and comfortable to the target audience. With experience in front-end, graphic and motion design her determination to work with everybody peacefully is what brings happy clients and a happy team.`],
-		[`Prabhjot Kaur`, `Motion Designer`, `photoURL`, `Prabhjot Kaur Gill did her diploma in motion designing and she  is very dedicated person towards her work, she give her best to make her clients satisfy with their projects. Her work force the client to come again. She is also  experienced in front-end development and designing of web.`],
-		[`Prabhjot Kaur`, `Graphic Designer`, `photoURL`, `Prabhjot Kaur Bhatti is passionate about her job. She is working as a graphic and motion designer. Her style is unique. She understands her responsibility of everything in our power to convince the client. Dedication and determination is key of success towards her work.`],
-		[`Text-A-Taxi`, `Local Taxi Catalogue and Review`, `photoURL`, `Text-A-Taxi started as a passion project for our client and gained users quickly, the app was originally servicing only large cities in Ontario but with the help of us they have been able to provide taxi information for all of Canada. We revamped their logo as well as their app, adding new features such as auto-calling and auto-texting within the app and a favorite taxi option to save your favorite local taxis.`]
-	];
-	
-    const play = document.querySelector(".play-button");
-	const pause = document.querySelector(".pause-button");
-	const stop = document.querySelector(".stop-button");
-	const rewind = document.querySelector(".rewind-button");
-	const fastForward = document.querySelector(".fast-forward-button");
-	const volumeUp = document.querySelector(".volume-up-button");
-    const volumeDown = document.querySelector(".volume-down-button");
-	const videoPlayer = document.querySelector(".video-player");
+	const exitButton = document.querySelector(".exit-button");
 
+	const videoLocation = document.querySelector(".image-wrapper");
+	const play = document.createElement("button");
+	play.classList.add("play-button");
+	const pause = document.createElement("button");
+	pause.classList.add("pause-button");
+	const stop = document.createElement("button");
+	stop.classList.add("stop-button");
+	const rewind = document.createElement("button");
+	rewind.classList.add("rewind-button");
+	const fastForward = document.createElement("button");
+	fastForward.classList.add("fastForward-button");
+	const volumeUp = document.createElement("button");
+	volumeUp.classList.add("volume-up-button");
+    const volumeDown = document.createElement("button");
+	volumeDown.classList.add("volume-down-button");
+	const videoPlayer = document.createElement("video");
+	videoPlayer.classList.add("video-player");
+	const controls = document.createElement("div");
+	controls.classList.add("video-controls");
+	controls.appendChild(play);
+	controls.appendChild(pause);
+	controls.appendChild(stop);
+	controls.appendChild(rewind);
+	controls.appendChild(fastForward);
+	controls.appendChild(volumeUp);
+	controls.appendChild(volumeDown);
 
 	function showLightBox() {
-		lightBox.classList.add('show-box');
-		name.textContent = lightBoxData[this.dataset.offset][0];
-		position.textContent = lightBoxData[this.dataset.offset][1];
-		lightboxPhoto.src = lightBoxData[this.dataset.offset][2];
-		description.textContent = lightBoxData[this.dataset.offset][3];
+		index = this.dataset.lightbox;
+		name.textContent = lightBoxData[index].name;
+		position.textContent = lightBoxData[index].role;
+		lightboxPhoto.src = lightBoxData[index].photourl;
+		lightboxPhoto.alt = lightBoxData[index].name;
+		description.textContent = lightBoxData[index].description;
+		if (index == "Video") {
+			lightboxPhoto.classList.add("hidden");
+			videoPlayer.src = lightBoxData[index].photourl;
+			videoPlayer.autoplay = true;
+			videoLocation.appendChild(videoPlayer);
+			videoLocation.appendChild(controls);
+		}
+		lightBox.classList.add("show-box");
 	}
 
 	function hideLightBox() {
-		for (i = 0; i < lightBox.length; i++) {
-			lightBox[i].classList.remove('show-box');
-			stopPressed();
+		lightBox.classList.remove("show-box");
+		if (index == "Video") {
+			lightboxPhoto.classList.remove("hidden");
+			videoLocation.removeChild(videoPlayer);
+			videoLocation.removeChild(controls);
 		}
+		
 	}
 	
 	function playPressed() {
@@ -88,33 +112,34 @@ function slideshow () {
 	}
 
 	function rewindPressed() {
-		videoPlayer.currentTime = currentTime - 5;
+		videoPlayer.currentTime = videoPlayer.currentTime - 2;
 	}
 
 	function fastForwardPressed() {
-		videoPlayer.currentTime = currentTime + 5;
+		videoPlayer.currentTime = videoPlayer.currentTime + 2;
 	}
 
 	function volumeUpPressed() {
-		if (videoPlayer.volume() < 1) {
-			videoPlayer.volume(videoPlayer.volume() + 0.1);
+		if (videoPlayer.volume != 1) {
+			videoPlayer.volume = videoPlayer.volume + 0.1;
 		}
 	}
 	
 	function volumeDownPressed() {
-		if (videoPlayer.volume() > 0) {
-			videoPlayer.volume(videoPlayer.volume() - 0.1);
+		if (videoPlayer.volume != 0) {
+			videoPlayer.volume = videoPlayer.volume - 0.1;
 		}
 	}
 	
     photos.forEach(photo => photo.addEventListener("click", showLightBox));
-	exitButtons.forEach(exitButton => exitButton.addEventListener("click", hideLightBox));
+	exitButton.addEventListener("click", hideLightBox);
+	
 
 	play.addEventListener("click", playPressed);
 	pause.addEventListener("click", pausePressed);
 	stop.addEventListener("click", stopPressed);
 	rewind.addEventListener("click", rewindPressed);
-	fastforward.addEventListener("click", fastForwardPressed);
+	fastForward.addEventListener("click", fastForwardPressed);
 	volumeUp.addEventListener("click", volumeUpPressed);
 	volumeDown.addEventListener("click", volumeDownPressed);
 	
