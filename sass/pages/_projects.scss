@@ -123,13 +123,15 @@
     width: 25%;
   }
 
-  .mobile {
-    display: block;
-  }
 
-  .desktop {
-    display: none;
-  }
+}
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
 }
 
 @media screen and (max-width: 1024px) {
@@ -147,6 +149,7 @@
     .box2 {
       display: none;
     }
+
   }
 }
 
@@ -166,12 +169,13 @@
       display: none;
     }
 
-    .mobile {
-      display: none;
-    }
+  }
 
-    .desktop {
-      display: block;
-    }
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
   }
 }
