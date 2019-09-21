@@ -1,0 +1,23 @@
+.map { 
+    padding-top: calc( 50px + (60 - 50) * ((100vw - #{$min-width}px) / (#{$max-width} - #{$min-width})));
+    
+    .map-outer {
+        position: relative;
+        text-align: right;
+        height: 350px;
+        width: 100vw;
+
+        .map-canvas {
+            overflow: hidden;
+            background: none;
+            height: 350px;
+            width: 100vw;
+
+            iframe {
+                height: 350px;
+                width: 100vw;
+                border: none;
+            }
+        }
+    }
+}

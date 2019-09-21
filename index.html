@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WHAP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="https://kit.fontawesome.com/f8b14333ef.js"></script>
+</head>
+<body>
+    <!--Hidden for accessibility-->
+    <h1 class="hidden">Main Body</h1>
+    <!--Page Header-->
+    <header class="header">
+        <h1 class="hidden">Navigation</h1>
+        <!--Logo-->
+        <div class="brand">
+            <a href="index.html" title="WHAP Inc">
+                <object class="logo" type="image/svg+xml" data="images/whap_logo.svg">SVG is not supported</object>
+            </a>
+        </div>
+        <!--Navbar-->
+        <nav class="nav">
+            <h1 class="hidden">Links</h1>
+            <ul class="nav-items">
+                <li class="home-link"><a href="index.html">Home</a></li>
+                <li class="about-link"><a href="#about">About</a></li>
+                <li class="projects-link"><a href="#projects">Projects</a></li>
+                <li class="contact-link"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu">
+            <i id="nav-toggler" onclick="toggle()" class="fas fa-bars"></i>
+        </div>
+    </header>
+    <!--Sidebar-->
+    <nav id="sidebar">
+        <h1 class="hidden">Sidebar</h1>
+        <ul class="sidebar-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <hr>
+        <ul class="social-icons">
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <hr>
+    </nav>
+
+    <!--Home Section-->
+    <section class="home one" id="bg-change">
+        <h1 class="hidden">Home</h1>
+        <div class="hero-text">
+            <h1 class="tagline">Friendly<br>Unique<br>Authentic</h1>
+        </div>
+    </section>
+
+    <!--About Section-->
+    <section class="about" id="about">
+        <div class="team">
+            <div class="member">
+                <div class="box"><h1 class="page-title">Our Team</h1></div>
+                <img class="photo first" data-lightbox="Walter" src="images/Walter.jpg"/>
+                <img class="photo second" data-lightbox="Harwinder" src="images/Harwinder.jpg"/>
+                <div class="box2"></div>
+                <img class="photo third" data-lightbox="Amie" src="images/Amie.jpg"/>
+                <img class="photo fourth" data-lightbox="Prahb" src="images/Prabh.jpg"/>
+                <img class="photo fifth" data-lightbox="Gill" src="images/Gill.jpg"/>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission">
+        <h1><span>W</span>ho Are <span>W</span>e?</h1>
+        <h3>We are a collective of out-of-the-box thinkers <br>ready to tackle your marketing projects. <br>Big or small, we WHAP! it all!</h3>
+        <br>
+        <h1>Our<span> V</span>alues</h1>
+        <h2>- Accessibility<br>- Intuitive Experiences<br>- Mobile First Design</h2>
+    </section>
+
+    <!--Projects Section-->
+    <section class="projects" id="projects">
+        <div class="project-grid">
+            <div class="box"><h1 class="page-title">Projects</h1></div>
+            <img class="main-project photo first" data-lightbox="TextATaxi" src="images/TextaTaxi.jpg"/>
+            <img class="project photo second" data-lightbox="Video" src="images/Whap.jpg"/>
+            <div class="box2"></div>
+            <img class="project third" src="images/whap.jpg"/>
+            <img class="project fourth" src="images/TextaTaxi.jpg"/>
+            <img class="project fifth" src="images/whap.jpg"/>
+        </div>
+    </section>
+
+    <!--Contact Section-->
+    <section class="contact-form" id="contact">
+        <div class="form">
+            <h1>Get In Touch</h1>
+            <form>
+                <p>Name</p>
+                <input type="text" name="first" value="First"/>
+                <input type="text" name="fast" value="Last"/>
+                <p>Company</p>
+                <input type="text" name="company">
+                <p>Email</p>
+                <input type="text" name="email">
+                <p>Message</p>
+                <textarea name="message" rows="10" cols="40"></textarea>
+                <br>
+                <input type="submit">
+            </form>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-info">
+            <div class="map">
+                <div class="map-outer">
+                    <div class="map-canvas">
+                        <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=123%20king&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+                        <a href="https://www.utilitysavingexpert.com"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <p><i class="fas fa-phone"></i> 1 (800) 222–1245</p>
+                <p><i class="fas fa-building"></i> 123 Dundas St London, Ontario</p>
+                <p><i class="fas fa-at"></i> info@whap.ca</p>
+                <ul>
+                    <li><p><a href="#"><i class="fab fa-twitter"></i></a></p></li>
+                    <li><p><a href="#"><i class="fab fa-facebook"></i></a></p></li>
+                    <li><p><a href="#"><i class="fab fa-instagram"></i></a></p></li>
+                </ul>
+                <p class="copyright">©2019 WHAP! Inc. | All Rights Reserved</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="light-box">
+            <i class="fas fa-times exit-button"></i>
+            <div class="image-wrapper"><img class="light-box-image" alt="image" src=""></div>
+            <div class="data-wrapper">
+                <h1 class="light-box-title"></h1>
+                <h3 class="light-box-subtitle"></h3>
+                <p class="light-box-description"></p>
+            </div>
+        </div>
+
+    <script type="module" src="js/main.js"></script>
+    
+</body>
+</html>
