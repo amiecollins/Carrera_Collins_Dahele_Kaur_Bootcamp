@@ -5,72 +5,99 @@ function toggle() {
     document.getElementById("sidebar").classList.toggle("active");
 }
 
+const toggler = document.getElementById('nav-toggler');
+toggler.addEventListener("click", toggle);
+
 //Home background slideshow
-var count = 0;
-const bg_classes = ["one", "two", "three", "four"];
-const target_id = document.getElementById("bg-change");
-slideshow();
+// var count = 0;
+// const bg_classes = ["one", "two", "three", "four"];
+// const target_id = document.getElementById("bg-change");
+// slideshow();
 
-function slideshow () {
+// function slideshow () {
 
-    if ( count < bg_classes.length ) {
-        count++
-        target_id.classList.add(bg_classes[count - 1]);
-        target_id.classList.remove(bg_classes[count]);
-        target_id.classList.remove(bg_classes[count + 1]);
-        target_id.classList.remove(bg_classes[count + 2]);
-    } else {
-        count = 0;  
-    }
+//     if ( count < bg_classes.length ) {
+//         count++
+//         target_id.classList.add(bg_classes[count - 1]);
+//         target_id.classList.remove(bg_classes[count]);
+//         target_id.classList.remove(bg_classes[count + 1]);
+//         target_id.classList.remove(bg_classes[count + 2]);
+//     } else {
+//         count = 0;  
+//     }
 
-    setTimeout(slideshow, 10000);
-}
+//     setTimeout(slideshow, 10000);
+// }
 
-//Lightbox functionality
+import lightBoxData from "./modules/lightboxData.js";
+
+// Lightbox & video functionality
 (() => {
 
 	console.log("javascript enabled");
 
-	const photos = document.querySelectorAll(".photo")
+	const photos = document.querySelectorAll(".photo");
 	const lightBox = document.querySelector(".light-box");
-	const name = document.querySelector(".name");
-	const position = document.querySelector(".position");
-	const lightboxPhoto = document.querySelector(".light-box-photo")
-	const description = document.querySelector(".light-box-description")
-	const exitButtons = docume1nt.querySelectorAll(".exit-button");
+	const name = document.querySelector(".light-box-title");
+	const position = document.querySelector(".light-box-subtitle");
+	const lightboxPhoto = document.querySelector(".light-box-image");
+	const description = document.querySelector(".light-box-description");
+	var index = "";
 
-	const lightBoxData = [
-		[`Walter Carrera`, `Front-End Developer`, `photoURL`, `Bio`],
-		[`Harwinder Dahele`, `Motion Designer`, `photoURL`, `Bio`],
-		[`Amie Collins`, `Project Manager`, `photoURL`, `Bio`],
-		[`Prabhjot Kaur`, `Motion Designer`, `photoURL`, `Bio`],
-		[`Prabhjot Kaur`, `Graphic Designer`, `photoURL`, `Bio`],
-		[`Text-A-Taxi`, `Local Taxi Catalogue and Review`, `photoURL`, `Text-A-Taxi started as a passion project for our client and gained users quickly, the app was originally servicing only large cities in Ontario but with the help of us they have been able to provide taxi information for all of Canada. We revamped their logo as well as their app, adding new features such as auto-calling and auto-texting within the app and a favorite taxi option to save your favorite local taxis.`]
-	];
-	
-    const play = document.querySelector(".play-button");
-	const pause = document.querySelector(".pause-button");
-	const stop = document.querySelector(".stop-button");
-	const rewind = document.querySelector(".rewind-button");
-	const fastForward = document.querySelector(".fast-forward-button");
-	const volumeUp = document.querySelector(".volume-up-button");
-    const volumeDown = document.querySelector(".volume-down-button");
-	const videoPlayer = document.querySelector(".video-player");
+	const exitButton = document.querySelector(".exit-button");
 
+	const videoLocation = document.querySelector(".image-wrapper");
+	const play = document.createElement("button");
+	play.classList.add("play-button");
+	const pause = document.createElement("button");
+	pause.classList.add("pause-button");
+	const stop = document.createElement("button");
+	stop.classList.add("stop-button");
+	const rewind = document.createElement("button");
+	rewind.classList.add("rewind-button");
+	const fastForward = document.createElement("button");
+	fastForward.classList.add("fastForward-button");
+	const volumeUp = document.createElement("button");
+	volumeUp.classList.add("volume-up-button");
+    const volumeDown = document.createElement("button");
+	volumeDown.classList.add("volume-down-button");
+	const videoPlayer = document.createElement("video");
+	videoPlayer.classList.add("video-player");
+	const controls = document.createElement("div");
+	controls.classList.add("video-controls");
+	controls.appendChild(play);
+	controls.appendChild(pause);
+	controls.appendChild(stop);
+	controls.appendChild(rewind);
+	controls.appendChild(fastForward);
+	controls.appendChild(volumeUp);
+	controls.appendChild(volumeDown);
 
 	function showLightBox() {
-		lightBox.classList.add('show-box');
-		name.textContent = lightBoxData[this.dataset.offset][0];
-		position.textContent = lightBoxData[this.dataset.offset][1];
-		lightboxPhoto.src = lightBoxData[this.dataset.offset][2];
-		description.textContent = lightBoxData[this.dataset.offset][3];
+		index = this.dataset.lightbox;
+		name.textContent = lightBoxData[index].name;
+		position.textContent = lightBoxData[index].role;
+		lightboxPhoto.src = lightBoxData[index].photourl;
+		lightboxPhoto.alt = lightBoxData[index].name;
+		description.textContent = lightBoxData[index].description;
+		if (index == "Video") {
+			lightboxPhoto.classList.add("hidden");
+			videoPlayer.src = lightBoxData[index].photourl;
+			videoPlayer.autoplay = true;
+			videoLocation.appendChild(videoPlayer);
+			videoLocation.appendChild(controls);
+		}
+		lightBox.classList.add("show-box");
 	}
 
 	function hideLightBox() {
-		for (i = 0; i < lightBox.length; i++) {
-			lightBox[i].classList.remove('show-box');
-			stopPressed();
+		lightBox.classList.remove("show-box");
+		if (index == "Video") {
+			lightboxPhoto.classList.remove("hidden");
+			videoLocation.removeChild(videoPlayer);
+			videoLocation.removeChild(controls);
 		}
+		
 	}
 	
 	function playPressed() {
@@ -88,33 +115,34 @@ function slideshow () {
 	}
 
 	function rewindPressed() {
-		videoPlayer.currentTime = currentTime - 5;
+		videoPlayer.currentTime = videoPlayer.currentTime - 2;
 	}
 
 	function fastForwardPressed() {
-		videoPlayer.currentTime = currentTime + 5;
+		videoPlayer.currentTime = videoPlayer.currentTime + 2;
 	}
 
 	function volumeUpPressed() {
-		if (videoPlayer.volume() < 1) {
-			videoPlayer.volume(videoPlayer.volume() + 0.1);
+		if (videoPlayer.volume != 1) {
+			videoPlayer.volume = videoPlayer.volume + 0.1;
 		}
 	}
 	
 	function volumeDownPressed() {
-		if (videoPlayer.volume() > 0) {
-			videoPlayer.volume(videoPlayer.volume() - 0.1);
+		if (videoPlayer.volume != 0) {
+			videoPlayer.volume = videoPlayer.volume - 0.1;
 		}
 	}
 	
     photos.forEach(photo => photo.addEventListener("click", showLightBox));
-	exitButtons.forEach(exitButton => exitButton.addEventListener("click", hideLightBox));
+	exitButton.addEventListener("click", hideLightBox);
+	
 
 	play.addEventListener("click", playPressed);
 	pause.addEventListener("click", pausePressed);
 	stop.addEventListener("click", stopPressed);
 	rewind.addEventListener("click", rewindPressed);
-	fastforward.addEventListener("click", fastForwardPressed);
+	fastForward.addEventListener("click", fastForwardPressed);
 	volumeUp.addEventListener("click", volumeUpPressed);
 	volumeDown.addEventListener("click", volumeDownPressed);
 	

@@ -5,9 +5,11 @@
 @import "layout/form";
 @import "components/lightbox";
 @import "components/sidebar";
+@import "components/map";
 @import "pages/home";
 @import "pages/about";
 @import "pages/projects";
+@import "pages/contact";
 
 //Hiding Accessibility Titles
 .hidden {
@@ -17,7 +19,6 @@
 }
 
 body {
-  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
 }

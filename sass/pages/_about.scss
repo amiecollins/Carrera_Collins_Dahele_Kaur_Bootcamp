@@ -3,35 +3,15 @@
 
   .team {
     padding: 55px 0;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
 
     .member {
-      display: -webkit-box;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
       display: flex;
-
-      -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-
-      -webkit-align-self: center;
-      -ms-flex-item-align: center;
       align-self: center;
 
-      img {
-        -webkit-box-flex: 1;
-        -moz-box-flex: 1;
-        -webkit-flex-grow: 1;
-        -ms-flex: 1;
+      .photo {
         flex-grow: 1;
-        -webkit-flex-shrink: 1;
-        -moz-flex-shrink: 1;
         flex-shrink: 1;
 
         max-width: 25%;
@@ -40,77 +20,35 @@
   }
 
   .first {
-    -webkit-box-ordinal-group: 1;
-    -moz-box-ordinal-group: 1;
-    -webkit-order: 1;
-    -ms-flex-order: 1;
     order: 1;
   }
 
   .second {
-    -webkit-box-ordinal-group: 2;
-    -moz-box-ordinal-group: 2;
-    -webkit-order: 2;
-    -ms-flex-order: 2;
     order: 2;
   }
 
   .third {
-    -webkit-box-ordinal-group: 5;
-    -moz-box-ordinal-group: 5;
-    -webkit-order: 5;
-    -ms-flex-order: 5;
     order: 5;
   }
 
   .fourth {
-    -webkit-box-ordinal-group: 6;
-    -moz-box-ordinal-group: 6;
-    -webkit-order: 6;
-    -ms-flex-order: 6;
     order: 6;
   }
 
   .fifth {
-    -webkit-box-ordinal-group: 7;
-    -moz-box-ordinal-group: 7;
-    -webkit-order: 7;
-    -ms-flex-order: 7;
     order: 7;
   }
 
   .box {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex: 1;
     flex-grow: 1;
-    -webkit-flex-shrink: 1;
-    -moz-flex-shrink: 1;
     flex-shrink: 1;
-
-    -webkit-box-ordinal-group: 3;
-    -moz-box-ordinal-group: 3;
-    -webkit-order: 3;
-    -ms-flex-order: 3;
+    display: flex;
+    align-items: center;
     order: 3;
 
     background-color: $white-smoke;
-
     max-width: 50%;
     width: 50%;
-
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
 
     h1 {
       color: $fire-brick;
@@ -120,19 +58,8 @@
   }
 
   .box2 {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex: 1;
     flex-grow: 1;
-    -webkit-flex-shrink: 1;
-    -moz-flex-shrink: 1;
     flex-shrink: 1;
-
-    -webkit-box-ordinal-group: 4;
-    -moz-box-ordinal-group: 4;
-    -webkit-order: 4;
-    -ms-flex-order: 4;
     order: 4;
 
     background-color: $white-smoke;
@@ -143,19 +70,11 @@
 
 .mission {
   background-color: $white-smoke;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-  display: flex;
   
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
+  display: flex;
   flex-wrap: wrap;
-
   flex-direction: column;
   align-items: center;
-
   justify-content: center;
 
   h1, h2, h3 {
@@ -186,7 +105,7 @@
   .about {
     .team {
       .member {
-        img {
+        .photo {
           max-width: calc(100% / 3);
         }
       }
@@ -206,7 +125,7 @@
   .about {
     .team {
       .member {
-        img {
+        .photo {
           max-width: 50%;
         }
       }

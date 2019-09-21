@@ -1,0 +1,128 @@
+.light-box {
+    display: none;
+    background-color: $white-smoke;	
+    position: fixed;
+	left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    .exit-button {
+        width: 5%;
+        height: 5%;
+        position: fixed;
+        right: 5%;
+        top: 10%;
+    }
+
+    .image-wrapper {
+        width: 25%;
+
+        .light-box-image {
+            border: 2px solid black;
+            max-width: 100%;
+        }
+    }
+
+    .data-wrapper {
+        width: 50%;
+        margin-left: 20px;
+        h1 {
+            color: $fire-brick;
+        }
+        p {
+            width: 80%;
+        }
+    }
+}
+
+.show-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+video {
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 20px;
+	border: thin solid #949393;
+}
+
+.video-controls {
+    width: 90%;
+    margin-top: 10px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.video-controls button {
+    padding: 0;
+    border: none;
+    outline: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    max-height: 30px;
+    background-repeat: no-repeat;
+}
+
+.play-button {
+    background-image:url("../../images/play.svg");
+}
+
+.pause-button {
+    background-image:url("../../images/pause.svg");
+}
+
+.stop-button {
+    background-image:url("../../images/stop.svg");
+}
+
+.rewind-button {
+    background-image:url("../../images/rewind.svg");
+}
+
+.fastForward-button {
+    background-image:url("../../images/fastforward.svg");
+}
+
+.volume-up-button {
+    background-image:url("../../images/volume_up.svg");
+}
+
+.volume-down-button {
+    background-image:url("../../images/volume_down.svg");
+}
+
+@media screen and (max-width: 900px) {
+
+    .show-box {
+        flex-wrap: wrap;
+    }
+
+    .light-box {
+
+        .image-wrapper {
+            width: 100%;
+            .light-box-image {
+                width: 300px;
+                margin-left: 20px;
+            }
+        }
+
+        .data-wrapper {
+            width: 100%;
+
+            p {
+                width: 70%;
+            }
+        }
+    }
+
+}

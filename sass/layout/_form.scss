@@ -1,5 +1,5 @@
-.contact {
-    background: url("../../images/notes.jpg") no-repeat center center fixed;
+.contact-form {
+    background: url("../../images/harwinder-walter.jpg") no-repeat right center fixed;
     background-size: cover;
     box-shadow: inset 0 0 0 2000px rgba(44, 44, 44, 0.6);
 
@@ -31,7 +31,9 @@
                 font-family: $jost;
                 font-size: 14px;
                 color: gray;
-                
+                border: none;
+                padding: 5px;
+                margin: 2.5px 0;
             }
         }
     }
