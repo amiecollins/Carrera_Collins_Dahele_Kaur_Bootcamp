@@ -10,7 +10,7 @@ export default {
         name: "Harwinder Dahele",
         role: "Motion Designer",
         photourl: "../../images/harwinder_2.jpg",
-        description: "Bio Goes Here"
+        description: `Harwinder is a motion designer and he create several types of designs in different softwares. He prefers to do video editing for different brands which launch in market. Moreover, he likes to build different kind of objects in 3D and video editing.`
     },
 
     Amie: {
